@@ -141,3 +141,70 @@ result = transcribe_audio_to_srt(
 4. 输出的 SRT 文件采用 UTF-8 编码，兼容大多数播放器
 5. 程序会显示详细的处理进度，方便监控长音频的转录进度
 
+脚本 3： video-resize.py
+
+**代码功能概述：**
+这是一个视频分辨率转换工具，专门用于将普通视频转换为适合 YouTube Shorts 的垂直视频格式（1080x1920）。主要功能：
+1. 自动创建输出目录（如果不存在）
+2. 调整视频分辨率到 1080x1920
+3. 保持原始视频的宽高比
+4. 用黑边填充空白区域（居中处理）
+5. 保持原始音频质量不变
+
+**安装步骤：**
+
+1. 确保安装了 Python（推荐 3.6 或更高版本）
+
+2. 安装 FFmpeg
+```bash
+# Windows:
+# 1. 下载 FFmpeg: https://www.gyan.dev/ffmpeg/builds/
+# 2. 解压并将 bin 目录添加到系统环境变量
+
+# Linux:
+sudo apt update
+sudo apt install ffmpeg
+
+# Mac:
+brew install ffmpeg
+```
+
+3. 验证安装
+```bash
+# 在终端/命令行中验证 FFmpeg 是否安装成功
+ffmpeg -version
+```
+
+**使用示例：**
+```python
+# 导入函数
+from video_converter import resize_video_for_youtube_shorts
+
+# 转换视频
+resize_video_for_youtube_shorts(
+    input_file="原始视频.mp4",
+    output_file="shorts版本.mp4"
+)
+```
+
+**参数说明：**
+- `input_file`: 输入视频文件路径
+- `output_file`: 输出视频文件路径
+- 输出视频尺寸: 1080x1920 像素（适合 YouTube Shorts）
+- 处理方式：
+  - 保持原始视频比例
+  - 自动添加黑边填充
+  - 视频居中显示
+  - 保持原始音频质量
+
+**注意事项：**
+1. 确保系统已正确安装 FFmpeg 并添加到环境变量
+2. 输入视频可以是任何 FFmpeg 支持的格式
+3. 如果输出目录不存在，程序会自动创建
+4. 代码会保持原始音频流（`-c:a copy`），这样可以加快处理速度
+5. 如果转换过程出错，会打印详细的错误信息
+
+**可能的报错处理：**
+- 如果遇到 "FFmpeg not found" 错误，请检查 FFmpeg 是否正确安装并添加到环境变量
+- 如果遇到权限错误，请确保对输出目录有写入权限
+- 如果输入文件不存在，会提示相应的错误信息
