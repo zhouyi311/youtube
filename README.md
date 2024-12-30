@@ -266,3 +266,102 @@ remove_spaces_newlines(
 输出文件内容：
 这是第一行内容这是第二行内容这是第三行
 ```
+
+脚本5：general_shorts_cut.py
+# Video Splitter
+
+一个简单但功能强大的视频分割工具，可以将长视频自动分割成59秒的短片段。这个工具特别适合需要将视频内容切分成短视频的场景，比如准备短视频平台的内容。
+
+## 功能特点
+
+- 自动将视频分割成59秒的片段
+- 保持原视频的质量
+- 自动创建输出目录
+- 使用H.264视频编码和AAC音频编码
+- 显示处理进度
+- 自动对输出文件进行编号
+
+## 环境要求
+
+- Python 3.6+
+- moviepy
+- ffmpeg
+
+## 安装步骤
+
+1. 首先确保您的系统已安装Python 3.6或更高版本。
+
+2. 安装必要的Python包：
+```bash
+pip install moviepy
+```
+
+3. 安装ffmpeg（moviepy的依赖）：
+
+   - Windows用户：
+     ```bash
+     # 使用Chocolatey包管理器
+     choco install ffmpeg
+     ```
+   
+   - Mac用户：
+     ```bash
+     # 使用Homebrew包管理器
+     brew install ffmpeg
+     ```
+   
+   - Linux用户：
+     ```bash
+     # Ubuntu/Debian
+     sudo apt-get install ffmpeg
+     
+     # CentOS
+     sudo yum install ffmpeg
+     ```
+
+4. 下载项目文件：
+```bash
+git clone [你的项目地址]
+cd video-splitter
+```
+
+## 使用方法
+
+1. 打开`split_video.py`文件，修改以下参数：
+```python
+input_video = "你的视频文件路径.mp4"  # 修改为您的输入视频路径
+output_folder = "输出文件夹路径"      # 修改为您想要保存分割视频的文件夹路径
+```
+
+2. 运行脚本：
+```bash
+python split_video.py
+```
+
+3. 等待处理完成，分割后的视频片段将保存在指定的输出文件夹中。
+
+## 输出格式
+
+- 输出的视频文件将按照 `clip_001.mp4`, `clip_002.mp4`, ... 的格式命名
+- 每个片段最长59秒
+- 视频编码：H.264
+- 音频编码：AAC
+
+## 注意事项
+
+- 确保有足够的磁盘空间存储分割后的视频片段
+- 处理大型视频文件时可能需要较长时间
+- 建议在处理重要视频前先备份原始文件
+- 确保对输入视频文件和输出目录有正确的读写权限
+
+## 常见问题解决
+
+1. 如果遇到ffmpeg相关错误，请确保：
+   - ffmpeg已正确安装
+   - ffmpeg可以在命令行中访问（已添加到系统PATH）
+
+2. 如果出现内存错误，可以尝试：
+   - 关闭其他占用内存的程序
+   - 处理较小的视频文件
+   - 增加系统的虚拟内存
+
