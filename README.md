@@ -63,7 +63,7 @@ result = transcribe_audio(
 3. 使用了 `int8` 量化（`compute_type="int8"`）来减少内存占用
 4. 程序会显示详细的处理进度，方便监控长音频的转录进度
 
-脚本 2： zimu.py
+# 脚本 2： zimu.py
 我来帮你总结这段代码的功能和安装步骤。
 
 **代码功能概述：**
