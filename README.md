@@ -141,7 +141,7 @@ result = transcribe_audio_to_srt(
 4. 输出的 SRT 文件采用 UTF-8 编码，兼容大多数播放器
 5. 程序会显示详细的处理进度，方便监控长音频的转录进度
 
-脚本 3： video-resize.py
+# 脚本 3： video-resize.py
 
 **代码功能概述：**
 这是一个视频分辨率转换工具，专门用于将普通视频转换为适合 YouTube Shorts 的垂直视频格式（1080x1920）。主要功能：
@@ -209,7 +209,7 @@ resize_video_for_youtube_shorts(
 - 如果遇到权限错误，请确保对输出目录有写入权限
 - 如果输入文件不存在，会提示相应的错误信息
 
-脚本 4： helper_srt_spacerm.py
+# 脚本 4： helper_srt_spacerm.py
 让我来总结这个字幕处理工具的功能和使用方法。
 
 **功能概述：**
