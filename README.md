@@ -33,6 +33,7 @@ source venv/bin/activate
 pip install faster-whisper
 pip install pydub
 pip install numpy
+pip install opencc
 
 # 如果处理 MP3 文件，还需要安装 ffmpeg
 # Windows: 
